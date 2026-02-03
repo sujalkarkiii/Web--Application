@@ -1,0 +1,34 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    background-color: rgb(172, 172, 172);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+/* cards */
+
+
+/* Cards */
+.card {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    background-color: azure;
+    text-align: center;
+
+}
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically on small screens */
+        gap: 10px;
+    }
+}
+

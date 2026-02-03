@@ -1,0 +1,35 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    padding: 20px;
+}
+
+.box {
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+/* Content-Box Example */
+.contentbox {
+    box-sizing: content-box;
+    background-color: #070a07;
+    border-style: solid;
+}
+
+/* Border-Box Example */
+.border-box {
+    box-sizing: border-box;
+    background-color: #2196f3;
+    border-style: dotted;
+}

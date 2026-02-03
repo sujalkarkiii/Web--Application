@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white;
+}
+
+/* Caption */
+caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Table cells */
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Header row */
+thead {
+    background-color: #e5e7eb; /* light gray */
+}
+
+/* Alternate rows */
+tbody tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+/* Hover effect */
+tbody tr:hover {
+    background-color: #e5e7eb;
+}

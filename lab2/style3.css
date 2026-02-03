@@ -1,0 +1,80 @@
+.position-container {
+    position: relative;   
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center; /* this centers text horizontally */
+    align-items: center;     /* this centers text vertically */
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Different types of positioning */
+.static   { position: static;   background-color:#9c27b0 }
+.relative { position: relative; top: 10px; left: 10px; background-color: #9c27b0; }
+.absolute { position: absolute; top: 10px; right: 20px; background-color: #9c27b0; }
+.sticky   { position: sticky;   top: 0; background-color: #9c27b0; }
+
+
+.display-container span {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #e43535;
+    border-radius: 3px;
+}
+
+.display-block { display: block; }
+.display-inline { display: inline; }
+.display-inline-block { display: inline-block; }
+.display-none { display: none; }
+
+/* overflow */
+.overflow-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.overflow-box {
+    width: 150px;
+    height: 100px;
+    background-color: #c5e1a5;
+    padding: 5px;
+    overflow: visible;
+    border: 1px solid #333;
+}
+
+.hidden-box { overflow: hidden; }
+.scroll-box { overflow: scroll; }
+.auto-box { overflow: auto; }
+
+
+
+/* z */
+.zindex-container {
+    position: relative;
+    height: 150px;
+ 
+}
+
+/* Z-Index Boxes */
+.z-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    line-height: 100px; /* center text vertically */
+    font-weight: bold;
+}
+
+/* Individual Boxes with z-index */
+.z1 { background-color: red;    top: 0;  left: 0;  z-index: 1; }
+.z2 { background-color: blue;   top: 15px; left:12px; z-index: 2; }
+.z3 { background-color: green;  top: 30px; left: 100px; z-index: 3; }

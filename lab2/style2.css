@@ -1,0 +1,55 @@
+/* Global Styles */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f0f0f5;
+    padding: 22px;
+    color: #333;
+}
+
+/* Headings */
+h1 {
+    color: #757677;
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    color: #8a8a8a;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: left;
+}
+
+h3 {
+    color: #ff9800;
+    font-family: 'Verdana', sans-serif;
+    font-size: 22px;
+    font-style: italic;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Different Text Styles */
+.type1 {
+    color: #4caf50;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.type2 {
+    font-style: italic;
+    font-family: 'Courier New', monospace;
+}
+
+.type3 {
+    font-weight: bold;
+    text-align: center;
+}
