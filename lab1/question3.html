@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+
+    <!-- Full Name -->
+    <label>Full Name:</label><br>
+    <input type="text" name="fullname" required><br>
+
+    <!-- Email -->
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br>
+
+    <!-- Password -->
+    <label>Password:</label><br>
+    <input type="password" name="password"><br>
+   
+
+    <!-- Age -->
+    <label>Age:</label>
+    <input type="number" name="age" min="16" max="60" required><br>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" required> Male
+    <input type="radio" name="gender"> Female
+
+    <!-- Course -->
+    <br><label>Course:</label><br>
+    <select name="course" required>
+        <option value="">Select Course</option>
+        <option>civil</option>
+        <option>computer</option>
+    </select><br><br>
+
+    <!-- Terms and Conditions -->
+    <input type="checkbox" required>
+    I accept the terms and conditions<br>
+
+    <!-- Submit -->
+    <input type="submit" value="Register">
+
+</form>
+</body>
+</html>
