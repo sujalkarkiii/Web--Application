@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Item List</title>
+<style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+
+    input {
+      padding: 6px;
+    }
+
+    button {
+      padding: 6px 10px;
+      margin-left: 5px;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Item List</h2>
+
+  <input type="text" id="itemInput" placeholder="Enter item name">
+  <button onclick="addItem()">Add Item</button>
+  <button onclick="removeLast()">Remove Last</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const value = input.value;
+
+      if (!value) {
+        alert("Please enter an item");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = value;
+
+      document.getElementById("list").appendChild(li);
+
+      input.value = ""; 
+    }
+
+    function removeLast() {
+      const list = document.getElementById("list");
+      if (list.lastChild) {
+        list.removeChild(list.lastChild);
+      }
+    }
+  </script>
+</body>
+</html>

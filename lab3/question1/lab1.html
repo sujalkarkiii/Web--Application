@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+
+    body {
+    font-family: Arial;
+    padding: 0px;
+    margin: 0px;
+  }
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  button {
+    padding: 8px 12px;
+
+  }
+    </style>
+</head>
+<body>
+  <h2>Password Toggle</h2>
+  <input id="Password" type="password"  />
+  <button onclick="togglePassword()">Show</button>
+
+  <script>
+    function togglePassword() {
+      const Password = document.getElementById("Password");
+      const Buttons = event.target;
+      if (Password.type === "password") {
+        Password.type = "text";
+        Buttons.textContent = "Hide";
+      } else {
+        Password.type = "password";
+        Buttons.textContent = "Show";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 60%; margin-top: 20px; }
+        th, td { border: 1px solid #888; padding: 8px 12px; text-align: center; }
+        th { background: #f0f0f0; }
+        button { margin: 10px 5px 0 0; }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Table</h2>
+    <input type="text" id="nameInput" placeholder="Name" style="margin-right:8px;">
+    <input type="number" id="ageInput" placeholder="Age" style="width:80px; margin-right:8px;">
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="deleteRow()">Delete Last Row</button>
+    <table id="dynTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        let rowCount = 0;
+        function addRow() {
+            const nameInput = document.getElementById('nameInput');
+            const ageInput = document.getElementById('ageInput');
+            let name = nameInput.value.trim();
+            let age = ageInput.value.trim();
+            if (!name || !age) {
+                alert('Please enter both name and age.');
+                return;
+            }
+            rowCount++;
+            const tbody = document.getElementById('dynTable').querySelector('tbody');
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${rowCount}</td><td>${name}</td><td>${age}</td>`;
+            tbody.appendChild(tr);
+            nameInput.value = '';
+            ageInput.value = '';
+        }
+        function deleteRow() {
+            const tbody = document.getElementById('dynTable').querySelector('tbody');
+            if (tbody.lastChild) {
+                tbody.removeChild(tbody.lastChild);
+                rowCount = Math.max(0, rowCount - 1);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+            display: block;
+        }
+
+        .invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <form id="regForm" novalidate>
+        <label>Full Name
+            <input type="text" id="fullname">
+            <span class="error" id="fullnameError"></span>
+        </label><br><br>
+
+        <label>Username
+            <input type="text" id="username">
+            <span class="error" id="usernameError"></span>
+        </label><br><br>
+
+        <label>Email
+            <input type="email" id="email">
+            <span class="error" id="emailError"></span>
+        </label><br><br>
+
+        <label>Age
+            <input type="number" id="age">
+            <span class="error" id="ageError"></span>
+        </label><br><br>
+
+        <label>Gender
+            <select id="gender">
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <span class="error" id="genderError"></span>
+        </label><br><br>
+
+        <label>Course
+            <input type="text" id="course">
+            <span class="error" id="courseError"></span>
+        </label><br><br>
+
+        <label>Role
+            <select id="role">
+                <option value="">Select Role</option>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+            <span class="error" id="roleError"></span>
+        </label><br><br>
+
+        <label>Password
+            <input type="password" id="password">
+            <span class="error" id="passwordError"></span>
+        </label><br><br>
+
+        <label>Confirm Password
+            <input type="password" id="confirmPassword">
+            <span class="error" id="confirmPasswordError"></span>
+        </label><br><br>
+
+        <label>
+            <input type="checkbox" id="terms"> Accept Terms
+        </label>
+        <span class="error" id="termsError"></span><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("regForm");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let valid = true;
+
+            // get values
+            const fullname = document.getElementById("fullname");
+            const username = document.getElementById("username");
+            const email = document.getElementById("email");
+            const age = document.getElementById("age");
+            const gender = document.getElementById("gender");
+            const course = document.getElementById("course");
+            const role = document.getElementById("role");
+            const password = document.getElementById("password");
+            const confirmPassword = document.getElementById("confirmPassword");
+            const terms = document.getElementById("terms");
+
+            // reset errors
+            document.querySelectorAll(".error").forEach(e => e.textContent = "");
+            document.querySelectorAll("input, select").forEach(el => el.classList.remove("invalid"));
+
+            function setError(input, message, errorId) {
+                input.classList.add("invalid");
+                document.getElementById(errorId).textContent = message;
+                valid = false;
+            }
+
+            // validations
+            if (!fullname.value) setError(fullname, "Full name required", "fullnameError");
+            if (!username.value) setError(username, "Username required", "usernameError");
+
+            if (!email.value) {
+                setError(email, "Email required", "emailError");
+            } else {
+                if (role.value === "Student" && !email.value.endsWith("@student.edu.np")) {
+                    setError(email, "Student email must end with @student.edu.np", "emailError");
+                }
+                if (role.value === "Teacher" && !email.value.endsWith("@tutor.edu.np")) {
+                    setError(email, "Teacher email must end with @tutor.edu.np", "emailError");
+                }
+            }
+
+            if (!age.value) setError(age, "Age required", "ageError");
+            if (!gender.value) setError(gender, "Select gender", "genderError");
+            if (!course.value) setError(course, "Course required", "courseError");
+            if (!role.value) setError(role, "Select role", "roleError");
+
+            if (!password.value) setError(password, "Password required", "passwordError");
+
+            if (confirmPassword.value !== password.value) {
+                setError(confirmPassword, "Passwords do not match", "confirmPasswordError");
+            }
+
+            if (!terms.checked) {
+                document.getElementById("termsError").textContent = "You must accept terms";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Form submitted successfully!");
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>

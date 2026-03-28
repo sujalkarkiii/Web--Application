@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb</title>
+</head>
+<body>
+  <h2 id="status">Light Bulb</h2>
+  
+  <img id="bulb" src="https://cdn-icons-png.flaticon.com/512/702/702814.png" width="150" />
+  
+  <br><br>
+  
+  <button id="btn" onclick="toggleBulb()">Turn On</button>
+
+  <script>
+    let on = false;
+
+    function toggleBulb() {
+      on = !on;
+
+      document.getElementById("bulb").src = on
+        ? "https://cdn-icons-png.flaticon.com/512/2988/2988036.png"
+        : "https://cdn-icons-png.flaticon.com/512/702/702814.png";
+
+      document.getElementById("status").textContent = on 
+        ? "Bulb is On" 
+        : "Bulb is Off";
+
+      document.getElementById("btn").textContent = on 
+        ? "Turn Off" 
+        : "Turn On";
+    }
+  </script>
+</body>
+</html>
